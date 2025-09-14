@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Data Science Quiz Design System - Arabic/English Support */
+
+@layer base {
+  :root {
+    /* Data Science Club Theme Colors */
+    --deep-knowledge-blue: 203 78% 22%; /* #0D3A61 */
+    --innovation-teal: 165 66% 48%; /* #35C6A7 */
+    --energy-orange: 15 100% 64%; /* #FF7143 */
+    --clarity-white: 0 0% 100%; /* #FFFFFF */
+
+    /* Background using clarity white with slight warmth */
+    --background: 0 0% 98%;
+    --foreground: 203 78% 22%; /* Deep Knowledge Blue */
+
+    /* Card system */
+    --card: 0 0% 100%;
+    --card-foreground: 203 78% 22%;
+
+    /* Colorful persona tiles - keeping existing for roles */
+    --teal: 180 65% 45%;
+    --teal-light: 180 65% 55%;
+    --coral: 15 85% 65%;
+    --coral-light: 15 85% 75%;
+    --mustard: 45 90% 60%;
+    --mustard-light: 45 90% 70%;
+    --indigo: 235 70% 55%;
+    --indigo-light: 235 70% 65%;
+    --mint: 160 70% 55%;
+    --mint-light: 160 70% 65%;
+    --peach: 25 85% 70%;
+    --peach-light: 25 85% 80%;
+
+    /* Semantic colors using club theme */
+    --primary: 203 78% 22%; /* Deep Knowledge Blue */
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 203 78% 18%;
+
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 203 78% 22%;
+
+    --accent: 165 66% 48%; /* Innovation Teal */
+    --accent-foreground: 0 0% 100%;
+
+    /* CTA/Action buttons use Energy Orange */
+    --cta: 15 100% 64%; /* Energy Orange */
+    --cta-foreground: 0 0% 100%;
+    --cta-hover: 15 100% 58%;
+
+    --muted: 45 15% 92%;
+    --muted-foreground: 220 10% 45%;
+
+    --border: 45 15% 88%;
+    --input: 45 15% 88%;
+    --ring: 235 70% 55%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 140 70% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 45 90% 55%;
+    --warning-foreground: 220 15% 15%;
+
+    /* Gradients for enhanced visual appeal */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--teal)), hsl(var(--mint)));
+    --gradient-warm: linear-gradient(135deg, hsl(var(--coral)), hsl(var(--peach)));
+    --gradient-vibrant: linear-gradient(135deg, hsl(var(--mustard)), hsl(var(--coral)));
+    --gradient-cool: linear-gradient(135deg, hsl(var(--indigo)), hsl(var(--teal)));
+
+    /* Shadows for depth */
+    --shadow-soft: 0 4px 20px -4px hsl(220 15% 15% / 0.1);
+    --shadow-card: 0 8px 30px -8px hsl(220 15% 15% / 0.12);
+    --shadow-hover: 0 12px 40px -12px hsl(220 15% 15% / 0.15);
+
+    /* Animation timings */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-tajawal;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  [dir="ltr"] {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  /* Custom utility classes */
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-warm {
+    background: var(--gradient-warm);
+  }
+
+  .gradient-vibrant {
+    background: var(--gradient-vibrant);
+  }
+
+  .gradient-cool {
+    background: var(--gradient-cool);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-hover {
+    box-shadow: var(--shadow-hover);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  /* Persona tile colors */
+  .tile-teal {
+    background: linear-gradient(135deg, hsl(var(--teal)), hsl(var(--teal-light)));
+  }
+
+  .tile-coral {
+    background: linear-gradient(135deg, hsl(var(--coral)), hsl(var(--coral-light)));
+  }
+
+  .tile-mustard {
+    background: linear-gradient(135deg, hsl(var(--mustard)), hsl(var(--mustard-light)));
+  }
+
+  .tile-indigo {
+    background: linear-gradient(135deg, hsl(var(--indigo)), hsl(var(--indigo-light)));
+  }
+
+  .tile-mint {
+    background: linear-gradient(135deg, hsl(var(--mint)), hsl(var(--mint-light)));
+  }
+
+  .tile-peach {
+    background: linear-gradient(135deg, hsl(var(--peach)), hsl(var(--peach-light)));
+  }
+
+  /* Hover animations */
+  .hover-lift {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  /* Quiz option cards */
+  .option-card {
+    transition: var(--transition-smooth);
+    border: 2px solid transparent;
+  }
+
+  .option-card:hover {
+    border-color: hsl(var(--primary));
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card);
+  }
+
+  .option-card.selected {
+    border-color: hsl(var(--primary));
+    background: hsl(var(--primary) / 0.05);
+  }
+
+  /* Progress bar animation */
+  .progress-fill {
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
