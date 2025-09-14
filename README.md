@@ -101,6 +101,31 @@ python manage.py migrate
 python manage.py runserver
 ```
 
+## ⚙️ Backend .env file
+
+To run the backend, you need to create a `.env` file inside the `backend/` folder with your own secret keys and configuration. Use the format below:
+
+```env
+# ------------------------------
+# Django Security & Debug
+# ------------------------------
+DJANGO_SECRET_KEY=put-your-own-secret-key-here
+DJANGO_DEBUG=True
+DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1
+
+# ------------------------------
+# CSRF Trusted Origins (Frontend dev server)
+# ------------------------------
+DJANGO_CSRF_TRUSTED_ORIGINS=http://localhost:5173,http://127.0.0.1:5173
+
+# ------------------------------
+# Database path (SQLite)
+# ------------------------------
+DJANGO_DB_PATH=C:\Users\yasse\Documents\VSC\fullstack_apps\data_persona_project\backend\db.sqlite3
+
+
+
+
 ---
 
 ## 🧑‍💻 Contributing
